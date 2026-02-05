@@ -5,51 +5,29 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Ahmed Alikhan | AI Engineer</title>
 
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
 <style>
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:'Segoe UI',sans-serif;
+font-family:'Poppins',sans-serif;
+scroll-behavior:smooth;
 }
 
 body{
+background:linear-gradient(-45deg,#1e3c72,#2a5298,#6a11cb,#ff6a00);
+background-size:400% 400%;
+animation:gradientBG 15s ease infinite;
 color:white;
 overflow-x:hidden;
 }
 
-/* 3D Animated Background */
-body::before{
-content:"";
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:linear-gradient(-45deg,#0f172a,#111827,#1e293b,#0f172a);
-background-size:400% 400%;
-animation:gradient 15s ease infinite;
-z-index:-2;
-}
-
-@keyframes gradient{
+@keyframes gradientBG{
 0%{background-position:0% 50%;}
 50%{background-position:100% 50%;}
 100%{background-position:0% 50%;}
-}
-
-/* Floating glowing circles */
-body::after{
-content:"";
-position:fixed;
-width:500px;
-height:500px;
-background:radial-gradient(circle,#00ffd5 0%,transparent 70%);
-top:-150px;
-right:-150px;
-opacity:0.15;
-filter:blur(80px);
-z-index:-1;
 }
 
 /* NAVBAR */
@@ -58,110 +36,123 @@ display:flex;
 justify-content:space-between;
 align-items:center;
 padding:20px 60px;
-background:rgba(255,255,255,0.05);
-backdrop-filter:blur(12px);
+background:rgba(0,0,0,0.3);
+backdrop-filter:blur(10px);
 position:sticky;
 top:0;
 }
 
-.logo-section{
+.logo{
 display:flex;
 align-items:center;
-gap:12px;
+gap:15px;
 }
 
-.logo-section img{
-width:50px;
-height:50px;
+.logo img{
+width:55px;
+height:55px;
 border-radius:50%;
 object-fit:cover;
-box-shadow:0 0 15px #00ffd5;
+border:3px solid white;
+box-shadow:0 0 15px #00ffe7;
 }
 
 nav a{
-color:#00ffd5;
+color:white;
 text-decoration:none;
 margin-left:25px;
 font-weight:500;
 }
 
+nav a:hover{
+color:#00ffe7;
+}
+
 /* HERO */
 .hero{
-padding:150px 20px;
 text-align:center;
+padding:140px 20px;
 }
 
 .hero h1{
-font-size:60px;
+font-size:70px;
+background:linear-gradient(90deg,#00ffe7,#ff00c8);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
 margin-bottom:20px;
 }
 
 .hero p{
 font-size:22px;
-color:#cbd5e1;
-max-width:700px;
+max-width:800px;
 margin:auto;
-}
-
-.btn{
-display:inline-block;
-margin-top:30px;
-padding:14px 30px;
-background:#00ffd5;
-color:black;
-border-radius:8px;
-font-weight:bold;
-text-decoration:none;
-transition:0.3s;
-}
-
-.btn:hover{
-background:white;
-transform:scale(1.05);
+opacity:0.95;
 }
 
 /* SECTION */
-section{
+.section{
 padding:100px 60px;
 text-align:center;
 }
 
 .section-title{
-font-size:36px;
-margin-bottom:30px;
+font-size:40px;
+margin-bottom:40px;
 }
 
-.card-container{
+.cards{
 display:flex;
-justify-content:center;
 flex-wrap:wrap;
+justify-content:center;
 gap:30px;
 }
 
 .card{
-background:rgba(255,255,255,0.05);
+background:rgba(255,255,255,0.15);
 padding:30px;
-border-radius:15px;
-width:280px;
-backdrop-filter:blur(10px);
+width:300px;
+border-radius:20px;
+backdrop-filter:blur(20px);
 transition:0.3s;
 }
 
 .card:hover{
-transform:translateY(-10px);
-box-shadow:0 10px 30px rgba(0,255,213,0.2);
+transform:translateY(-12px);
+background:rgba(255,255,255,0.25);
 }
 
-.contact p{
-margin:10px 0;
-color:#e2e8f0;
+/* CONTACT */
+.contact-buttons{
+margin-top:40px;
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+gap:20px;
 }
 
+.btn{
+padding:14px 28px;
+border-radius:50px;
+text-decoration:none;
+font-weight:600;
+transition:0.3s;
+color:white;
+}
+
+.whatsapp{background:#25D366;}
+.instagram{background:#E1306C;}
+.email{background:#00ffe7;color:black;}
+.linkedin{background:#0077B5;}
+
+.btn:hover{
+transform:scale(1.1);
+}
+
+/* FOOTER */
 footer{
 text-align:center;
 padding:40px;
-background:rgba(255,255,255,0.05);
-color:#94a3b8;
+background:rgba(0,0,0,0.3);
 }
 </style>
 </head>
@@ -169,11 +160,11 @@ color:#94a3b8;
 <body>
 
 <nav>
-<div class="logo-section">
+<div class="logo">
 <img src="logo.jpg">
 <div>
 <strong>Ahmed Alikhan</strong><br>
-<small style="color:#94a3b8;">AI Engineer</small>
+<small>Artificial Intelligence Engineer</small>
 </div>
 </div>
 
@@ -185,40 +176,87 @@ color:#94a3b8;
 </nav>
 
 <div class="hero">
-<h1>Hi, I'm Ahmed Alikhan</h1>
+<h1>Ahmed Alikhan</h1>
 <p>
-Artificial Intelligence & Data Science Engineer focused on building intelligent systems, scalable applications, and real-world AI solutions.
+Early-stage Artificial Intelligence & Data Science Engineer passionate about building intelligent systems,
+developing strong technical foundations, and growing into a high-impact AI professional.
 </p>
-<a href="#contact" class="btn">Let's Connect</a>
 </div>
 
-<section id="about">
+<section id="about" class="section">
 <div class="section-title">About Me</div>
-<p style="max-width:750px;margin:auto;color:#e2e8f0;">
-Currently pursuing BTech in Artificial Intelligence & Data Science at Saveetha Engineering College.
-Passionate about Machine Learning, Data Science, and modern web technologies.
-Focused on building practical AI-driven systems from the foundation stage of my career.
+<div class="card">
+<p>
+I am currently pursuing BTech in Artificial Intelligence & Data Science at Saveetha Engineering College.
+As a first-year engineering student, I am in the foundational phase of my technical journey,
+focused on mastering core programming concepts and AI fundamentals.
 </p>
-</section>
-
-<section id="skills">
-<div class="section-title">Technical Expertise</div>
-<div class="card-container">
-<div class="card">Python & Data Structures</div>
-<div class="card">Machine Learning</div>
-<div class="card">Data Analysis</div>
-<div class="card">Full-Stack Development</div>
-<div class="card">AI Model Development</div>
+<br>
+<p>
+My goal is long-term excellence — to continuously improve, build real-world projects,
+and evolve into a skilled AI engineer capable of solving meaningful real-world problems.
+</p>
 </div>
 </section>
 
-<section id="contact" class="contact">
-<div class="section-title">Contact</div>
+<section id="skills" class="section">
+<div class="section-title">Technical Foundation</div>
+<div class="cards">
+
+<div class="card">
+<h3>Programming Fundamentals</h3>
+<p>Python basics, Data Structures, Logical Thinking, Problem Solving</p>
+</div>
+
+<div class="card">
+<h3>Artificial Intelligence (Learning Phase)</h3>
+<p>Introduction to Machine Learning, Model Understanding, Data Preprocessing</p>
+</div>
+
+<div class="card">
+<h3>Data Science Foundation</h3>
+<p>Basic Statistics, Pandas, NumPy, Data Visualization Concepts</p>
+</div>
+
+<div class="card">
+<h3>Web Development</h3>
+<p>HTML, CSS, Responsive Design, Frontend Structure</p>
+</div>
+
+<div class="card">
+<h3>Growth & Vision</h3>
+<p>Continuous learner, disciplined practice, focused on long-term AI career development</p>
+</div>
+
+</div>
+</section>
+
+<section id="contact" class="section">
+<div class="section-title">Let's Connect</div>
+
 <p><strong>📞 Mobile:</strong> 8428877057</p>
 <p><strong>📧 Email:</strong> alikhan.official0077@gmail.com</p>
-<p><strong>📸 Instagram:</strong> @alikhan0_07</p>
-<br>
-<a href="mailto:alikhan.official0077@gmail.com" class="btn">Send Email</a>
+
+<div class="contact-buttons">
+
+<a class="btn whatsapp" href="https://wa.me/918428877057" target="_blank">
+WhatsApp
+</a>
+
+<a class="btn instagram" href="https://www.instagram.com/alikhan0_07" target="_blank">
+Instagram
+</a>
+
+<a class="btn email" href="mailto:alikhan.official0077@gmail.com">
+Email
+</a>
+
+<a class="btn linkedin" href="https://www.linkedin.com/in/ahmed-alikhan-672497386" target="_blank">
+LinkedIn
+</a>
+
+</div>
+
 </section>
 
 <footer>
