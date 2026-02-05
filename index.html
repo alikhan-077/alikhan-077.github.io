@@ -1,175 +1,229 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Ahmed Alikhan | AI Engineer</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ahmed Alikhan | AI Engineer</title>
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', sans-serif;
-        }
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Segoe UI',sans-serif;
+}
 
-        body {
-            background: #0f172a;
-            color: white;
-            scroll-behavior: smooth;
-        }
+body{
+color:white;
+overflow-x:hidden;
+}
 
-        nav {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            padding: 20px;
-            background: rgba(255,255,255,0.05);
-            position: sticky;
-            top: 0;
-            backdrop-filter: blur(10px);
-        }
+/* 3D Animated Background */
+body::before{
+content:"";
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:linear-gradient(-45deg,#0f172a,#111827,#1e293b,#0f172a);
+background-size:400% 400%;
+animation:gradient 15s ease infinite;
+z-index:-2;
+}
 
-        nav a {
-            color: #00ffd5;
-            text-decoration: none;
-            font-weight: bold;
-        }
+@keyframes gradient{
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
+}
 
-        section {
-            padding: 80px 20px;
-            text-align: center;
-        }
+/* Floating glowing circles */
+body::after{
+content:"";
+position:fixed;
+width:500px;
+height:500px;
+background:radial-gradient(circle,#00ffd5 0%,transparent 70%);
+top:-150px;
+right:-150px;
+opacity:0.15;
+filter:blur(80px);
+z-index:-1;
+}
 
-        h1 {
-            font-size: 50px;
-        }
+/* NAVBAR */
+nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 60px;
+background:rgba(255,255,255,0.05);
+backdrop-filter:blur(12px);
+position:sticky;
+top:0;
+}
 
-        .typing {
-            color: #00ffd5;
-            font-size: 22px;
-            margin-top: 10px;
-        }
+.logo-section{
+display:flex;
+align-items:center;
+gap:12px;
+}
 
-        .btn {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 12px 25px;
-            background: #00ffd5;
-            color: black;
-            font-weight: bold;
-            border-radius: 6px;
-            text-decoration: none;
-            transition: 0.3s;
-        }
+.logo-section img{
+width:50px;
+height:50px;
+border-radius:50%;
+object-fit:cover;
+box-shadow:0 0 15px #00ffd5;
+}
 
-        .btn:hover {
-            background: white;
-        }
+nav a{
+color:#00ffd5;
+text-decoration:none;
+margin-left:25px;
+font-weight:500;
+}
 
-        .card-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
-            margin-top: 40px;
-        }
+/* HERO */
+.hero{
+padding:150px 20px;
+text-align:center;
+}
 
-        .card {
-            background: #1e293b;
-            padding: 25px;
-            border-radius: 12px;
-            width: 260px;
-            transition: 0.3s;
-        }
+.hero h1{
+font-size:60px;
+margin-bottom:20px;
+}
 
-        .card:hover {
-            transform: translateY(-10px);
-            background: #334155;
-        }
+.hero p{
+font-size:22px;
+color:#cbd5e1;
+max-width:700px;
+margin:auto;
+}
 
-        footer {
-            text-align: center;
-            padding: 30px;
-            background: #111827;
-            margin-top: 50px;
-            font-size: 14px;
-            opacity: 0.7;
-        }
-    </style>
+.btn{
+display:inline-block;
+margin-top:30px;
+padding:14px 30px;
+background:#00ffd5;
+color:black;
+border-radius:8px;
+font-weight:bold;
+text-decoration:none;
+transition:0.3s;
+}
+
+.btn:hover{
+background:white;
+transform:scale(1.05);
+}
+
+/* SECTION */
+section{
+padding:100px 60px;
+text-align:center;
+}
+
+.section-title{
+font-size:36px;
+margin-bottom:30px;
+}
+
+.card-container{
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+gap:30px;
+}
+
+.card{
+background:rgba(255,255,255,0.05);
+padding:30px;
+border-radius:15px;
+width:280px;
+backdrop-filter:blur(10px);
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-10px);
+box-shadow:0 10px 30px rgba(0,255,213,0.2);
+}
+
+.contact p{
+margin:10px 0;
+color:#e2e8f0;
+}
+
+footer{
+text-align:center;
+padding:40px;
+background:rgba(255,255,255,0.05);
+color:#94a3b8;
+}
+</style>
 </head>
 
 <body>
 
 <nav>
-    <a href="#home">Home</a>
-    <a href="#about">About</a>
-    <a href="#skills">Skills</a>
-    <a href="#projects">Projects</a>
-    <a href="#contact">Contact</a>
+<div class="logo-section">
+<img src="logo.jpg">
+<div>
+<strong>Ahmed Alikhan</strong><br>
+<small style="color:#94a3b8;">AI Engineer</small>
+</div>
+</div>
+
+<div>
+<a href="#about">About</a>
+<a href="#skills">Skills</a>
+<a href="#contact">Contact</a>
+</div>
 </nav>
 
-<section id="home">
-    <h1>Ahmed Alikhan</h1>
-    <div class="typing" id="typing"></div>
-    <a href="#contact" class="btn">Hire Me</a>
-</section>
+<div class="hero">
+<h1>Hi, I'm Ahmed Alikhan</h1>
+<p>
+Artificial Intelligence & Data Science Engineer focused on building intelligent systems, scalable applications, and real-world AI solutions.
+</p>
+<a href="#contact" class="btn">Let's Connect</a>
+</div>
 
 <section id="about">
-    <h2>About Me</h2>
-    <p style="max-width:700px;margin:20px auto;opacity:0.8;">
-        I am a BTech Artificial Intelligence & Data Science student at Saveetha Engineering College.
-        Passionate about AI, Machine Learning, Data Science, and Web Development.
-        Building real-world projects from 1st year.
-    </p>
+<div class="section-title">About Me</div>
+<p style="max-width:750px;margin:auto;color:#e2e8f0;">
+Currently pursuing BTech in Artificial Intelligence & Data Science at Saveetha Engineering College.
+Passionate about Machine Learning, Data Science, and modern web technologies.
+Focused on building practical AI-driven systems from the foundation stage of my career.
+</p>
 </section>
 
 <section id="skills">
-    <h2>Skills</h2>
-    <div class="card-container">
-        <div class="card">Python</div>
-        <div class="card">Machine Learning</div>
-        <div class="card">Data Science</div>
-        <div class="card">Web Development</div>
-        <div class="card">Problem Solving</div>
-    </div>
+<div class="section-title">Technical Expertise</div>
+<div class="card-container">
+<div class="card">Python & Data Structures</div>
+<div class="card">Machine Learning</div>
+<div class="card">Data Analysis</div>
+<div class="card">Full-Stack Development</div>
+<div class="card">AI Model Development</div>
+</div>
 </section>
 
-<section id="projects">
-    <h2>Projects</h2>
-    <div class="card-container">
-        <div class="card">
-            AI Mini Project <br><br>
-            <a href="https://github.com/alikhan-077" target="_blank">View</a>
-        </div>
-        <div class="card">
-            Web App Project <br><br>
-            <a href="https://github.com/alikhan-077" target="_blank">View</a>
-        </div>
-    </div>
-</section>
-
-<section id="contact">
-    <h2>Contact</h2>
-    <a href="mailto:alikhan.official0077@gmail.com" class="btn">Email</a>
-    <a href="https://www.instagram.com/alikhan0_07" target="_blank" class="btn">Instagram</a>
+<section id="contact" class="contact">
+<div class="section-title">Contact</div>
+<p><strong>📞 Mobile:</strong> 8428877057</p>
+<p><strong>📧 Email:</strong> alikhan.official0077@gmail.com</p>
+<p><strong>📸 Instagram:</strong> @alikhan0_07</p>
+<br>
+<a href="mailto:alikhan.official0077@gmail.com" class="btn">Send Email</a>
 </section>
 
 <footer>
-    © 2026 Ahmed Alikhan | AI Engineer
+© 2026 Ahmed Alikhan | Artificial Intelligence Engineer
 </footer>
-
-<script>
-    const text = "AI Engineer | Data Science Enthusiast | Python Developer";
-    let i = 0;
-    function typing() {
-        if (i < text.length) {
-            document.getElementById("typing").innerHTML += text.charAt(i);
-            i++;
-            setTimeout(typing, 70);
-        }
-    }
-    typing();
-</script>
 
 </body>
 </html>
